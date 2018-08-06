@@ -35,7 +35,7 @@ The value of this property **must** be equal to:
 The value of this property **must** be equal to one of the [known values below](#<%=nameSlug %>-known-values).
 <% } else { %>
 
-### <%=name %> Type
+#### <%=name %> Type
 
 <% if (schema.type==="string") { %>
 <%- include("string-type",{schema:schema,_:_}) %>
@@ -66,8 +66,7 @@ Unknown type `<%= schema.type %>`.
 
 | Value | Description |
 |-------|-------------|
-<%  _.forIn(schema["meta:enum"], (value, key, object) => { %>
-| `<%= key %>` | <%= value %> |
+<%  _.forIn(schema["meta:enum"], (value, key, object) => { %> | `<%= key %>` | <%= value %> |
 <% }); %>
 
 <% } %>

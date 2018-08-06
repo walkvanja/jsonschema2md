@@ -29,6 +29,8 @@
 <%- include("number-type",{schema:schemas[i],_:_}) %>
 <% } else if (schemas[i].type==="boolean") { %>
 <%- include("boolean-type",{schema:schemas[i],_:_}) %>
+<% } else if (schemas[i].type==="object") { %>
+<%- include("object-type",{schema:schemas[i],_:_,nameSlug:nameSlug}) %>
 <% } else if (schemas[i].type==="array") { %>
 <%- include("array-type",{schema:schemas[i],_:_,nested:false,ejs:ejs}) %>
 <% } else if (schemas[i].$ref!==undefined) { %>

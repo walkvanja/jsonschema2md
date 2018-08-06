@@ -12,17 +12,17 @@ Array type: <%=schema.simpletype %>
 <% if (schema.items!==undefined) { %>
 <% if (!(schema.items!==undefined&&schema.items.type==="array")) { %>
 All items must be of the type:<% }
-if (schema.items.type==="string") { 
-  %><%- include("string-type",{schema:schema.items,_:_}) 
-  %><% } else if (schema.items.type==="number"||schema.items.type==="integer") { 
+if (schema.items.type==="string") {
+  %><%- include("string-type",{schema:schema.items,_:_})
+  %><% } else if (schema.items.type==="number"||schema.items.type==="integer") {
   %><%- include("number-type",{schema:schema.items,_:_})
   %><% } else if (schema.items.type==="boolean") {
   %><%- include("boolean-type",{schema:schema.items,_:_})
   %><% } else if (schema.items.type==="object") {
-  %><%- include("object-type",{schema:schema.items,_:_}) 
-  %><% } else if (schema.items.type==="array") { 
-  %><%- include("array-type",{schema:schema.items,_:_, nested:true}) 
-  %><% } else if (schema.items.$ref!==undefined) { 
+  %><%- include("object-type",{schema:schema.items,_:_})
+  %><% } else if (schema.items.type==="array") {
+  %><%- include("array-type",{schema:schema.items,_:_, nested:true})
+  %><% } else if (schema.items.$ref!==undefined) {
   %><%- include("referenced-type",{schema:schema.items,_:_}) %>
 <% } else { %>
 Unknown type `<%= schema.items.type %>`.
